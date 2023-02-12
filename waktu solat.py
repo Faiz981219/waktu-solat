@@ -1,4 +1,6 @@
+#from IPython.display import clear_output
 import math
+#from getpass import *
 import datetime
 import os
 
@@ -173,7 +175,7 @@ while True:
     kerendahan_ufuk = (1.76 / 60) * (math.sqrt(TT))
     ref = 34/60
     sd = 16/60
-    ho = - (ref + sd + kerendahan_ufuk)
+    ho = - (1 + kerendahan_ufuk)
 
     z = math.radians(Latitude)
 
@@ -258,7 +260,7 @@ while True:
         seconds = int((((decimal - hours) * 60) - minutes) * 60)
         return "{}:{}:{}".format(hours, minutes, seconds)
 
-    h_Subuh = math.radians(-18- kerendahan_ufuk)
+    h_Subuh = math.radians(-18 - kerendahan_ufuk)
     h_Syuruk = math.radians(ho)
     h_Asar = math.atan(1 / (1 + math.tan(abs((z - DoS_a)))))
     h_Maghrib = math.radians(ho)
@@ -295,4 +297,3 @@ while True:
 
     if repeat.lower() == "n":
         break
-
