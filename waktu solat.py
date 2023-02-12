@@ -1,6 +1,4 @@
-#from IPython.display import clear_output
 import math
-#from getpass import *
 import datetime
 import os
 
